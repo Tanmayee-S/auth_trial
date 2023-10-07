@@ -11,7 +11,7 @@ new_password = st.text_input("Password", type="password")
 
 if st.button("Register"):
   if new_username and new_password:
-    if new_usernmae in user_data:
+    if new_username in user_data:
       st.error("Username already exists.")
     else:
       user_data[new_username] = new_password
