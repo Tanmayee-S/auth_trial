@@ -26,7 +26,7 @@ st.title("User Authentication Service")
 
 if st.button("Register"):
     st.subheader("Register a new user")
-    new_username = st.text_input("Usernmae:")
+    new_username = st.text_input("Username:")
     new_password = st.text_input("Password:", type = "password")
 
     if new_username and new_password:
@@ -34,7 +34,7 @@ if st.button("Register"):
 
 if st.button("Login"):
     st.subheader("Login")
-    username = st.text_input("Usernmae:")
+    username = st.text_input("Username:")
     password = st.text_input("Password:", type = "password")
     
     if username and password:
