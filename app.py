@@ -2,7 +2,7 @@ import streamlit as st
 import sqlite3
 import hashlib
 
-conn = squlite3.connect('user.db')
+conn = sqlite3.connect('user.db')
 c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS users (username TEXT PRIMARY KEY, password TEXT)''')
 conn.commit()
