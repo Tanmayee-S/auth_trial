@@ -7,21 +7,6 @@ c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS users (username TEXT PRIMARY KEY, password TEXT)''')
 conn.commit()
 
-def create_user(username, password):
-    hased_password = hashlib.sha256(password.encode()).hexdigest()
-    c.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, hashed_password))
-    conn.commit()
-    st.success("user created successfully!")
-
-def authenticate_user(username, password):
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
-    c.execute('SELECT * FROM users WHERE username = ? AND password = ?', (username, hashed_password))
-    user = c.fetchone()
-    if user:
-        return True
-    else:
-        return False
-
 st.title("User Authentication Service")
 
 if st.button("Register"):
