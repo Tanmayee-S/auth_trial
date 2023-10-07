@@ -6,7 +6,7 @@ st.title("User authentication service")
 
 st.subheader("Register a new user")
 new_username = st.text_input("Username:")
-new_password = st.text_input("Password, type="password")
+new_password = st.text_input("Password", type="password")
 
 
 if st.button("Register"):
